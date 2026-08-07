@@ -104,4 +104,4 @@ in the whole workshop.
 
 ## Licence
 
-MIT.
+[MIT](LICENSE). Use it, fork it, run it at your own event.

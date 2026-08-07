@@ -13,6 +13,40 @@ all running locally on a free model, with the wifi off if you like.
 
 ---
 
+## Why this exists
+
+Everyone is building integrations between language models and their own systems,
+and everyone is building them slightly differently. MCP is the attempt to stop
+that — one protocol, so a tool written once works with any model, in any host
+application, in any language.
+
+The idea is not complicated. The confusing part right now is that the protocol
+went through its largest revision to date in July 2026, the Python SDK shipped a
+breaking 2.0 at the same time, and most tutorials you will find were written
+before both. So this workshop teaches the current thing and points out where the
+older material diverges.
+
+It also deliberately makes you write the agent loop by hand before handing you a
+framework — because the loop is about forty lines, and understanding it is the
+difference between debugging your agent and guessing at it.
+
+## Who it's for
+
+Python developers who have used an LLM API before. You do not need prior MCP
+experience, agent-framework experience, or any model credentials.
+
+You *do* need a laptop with Python 3.10+ and roughly 4 GB free for a local model.
+
+## What you'll walk away with
+
+- A mental model of MCP that survives contact with a real codebase
+- A working server you can extend into something you actually use
+- The agent loop, written by your own hands — no longer a black box
+- An informed opinion on when a framework is worth it
+- A clear-eyed view of the security problems, which are not the usual ones
+
+---
+
 ## Start here
 
 ```bash
@@ -39,7 +73,12 @@ instructions, including picking a model: **[docs/00-setup.md](docs/00-setup.md)*
 | 5 | [Where next](docs/05-where-next.md) | 10 min | Remote servers, security, what to build |
 
 **Reference**: [cheatsheet](docs/cheatsheet.md) ·
-[models](docs/models.md) · [troubleshooting](docs/troubleshooting.md)
+[glossary](docs/glossary.md) · [models](docs/models.md) ·
+[troubleshooting](docs/troubleshooting.md)
+
+**Teaching this yourself?** [docs/facilitator.md](docs/facilitator.md) has timings
+with minimums, per-module teaching notes, the questions people always ask, and what
+to do when the demo breaks.
 
 *Running short? The resource and prompt in module 2, the Inspector step, and
 module 5 can each be demoed rather than typed — that brings it back to ~90 min.*

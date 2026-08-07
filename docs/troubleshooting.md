@@ -73,6 +73,10 @@ Correct. It is waiting for JSON-RPC on stdin. Use `make client` or `make jsonrpc
 ollama serve
 ```
 
+If you installed via Homebrew rather than the desktop app, nothing starts it for
+you — either run `ollama serve` in its own terminal for the session, or
+`brew services start ollama` to have it start at login.
+
 **`model not pulled`**
 
 ```bash
@@ -80,6 +84,18 @@ ollama pull qwen3:4b
 ```
 
 `make check` prints which models you do have.
+
+**The first question is very slow**
+
+Normal — the first call after pulling a model loads it into memory. Warm it up
+before the session:
+
+```bash
+ollama run qwen3:4b "hello"
+```
+
+Expect roughly 10 s for a one-tool question and up to ~75 s for a two-tool chain
+on a laptop. If it is much slower than that, something else is eating your RAM.
 
 **The model ignores the tools, or invents ones that don't exist**
 

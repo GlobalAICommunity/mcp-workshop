@@ -69,7 +69,8 @@ finished version of every file if you get stuck or fall behind.
 ## Models
 
 You need something that can call tools. The default is **Ollama** running
-`qwen3:4b` locally: free, no account, works offline.
+`qwen3:4b` locally: free, no account, works offline — and verified end to end for
+this workshop, including multi-step tool chains.
 
 Can't run a local model? **Google Gemini**, **xAI Grok** and **Microsoft
 Foundry** are one-line swaps in `.env`. See [docs/models.md](docs/models.md).

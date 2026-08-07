@@ -53,10 +53,12 @@ Ollama serves an OpenAI-compatible API at `http://localhost:11434/v1`, which is
 why the raw loop in module 3 works against it unchanged. Override with
 `OLLAMA_BASE_URL` if you run it elsewhere.
 
-**Expect some wobble.** A 4B model occasionally skips a tool or mangles its
-arguments. The workshop code handles that, and it is an honest illustration of
-why production agents need retries. If it is too flaky to demo in front of
-people, move to `qwen3:8b` or a hosted provider.
+**In practice it holds up well.** Across the workshop's demo questions `qwen3:4b`
+picked the right tool every time, including a two-tool chain and recovering from
+an unknown-city error. But it is a 4B model, so occasional skipped tools or
+mangled arguments are possible — the workshop code handles that, and it is an
+honest illustration of why production agents need retries. If it does wobble in
+front of people, move to `qwen3:8b` or a hosted provider.
 
 ## Google Gemini — the easiest hosted option
 
@@ -103,11 +105,28 @@ name. This trips everyone up at least once.
 
 ## Honesty about what has been tested
 
-- **Ollama** — the intended and recommended path.
+- **Ollama / `qwen3:4b`** — the recommended path, and **verified end to end** on
+  an Apple Silicon Mac: single tool calls, multi-step chains, error recovery, the
+  Pydantic AI path and the web UI all worked first time. Timings below.
 - **Google, Grok, Foundry** — wired against current provider documentation and
   verified to construct the right client and model objects, but **not exercised
   with live credentials** by the workshop author. If one misbehaves, the model
   name or API version is the first thing to check.
+
+### Rough timings with `qwen3:4b`
+
+Measured on an Apple Silicon laptop with nothing else loaded:
+
+| Question | Tools called | Time |
+|---|---|---|
+| "Weather in Amsterdam?" | 1 | ~10 s |
+| "Weather in Atlantis?" | 1, then recovers | ~17 s |
+| "What should I pack for Tokyo?" | 1 | ~40–55 s |
+| "Flight to Barcelona + weather there" | 2 | ~75 s |
+
+Slower hardware will be slower. Budget about a minute per question when demoing
+live, and **warm the model up with one throwaway query before the session** — the
+first call after a pull is noticeably the slowest.
 
 Model names in particular move fast. All of them are overridable with
 `MCP_WORKSHOP_MODEL`, and if a default has been retired by the time you read

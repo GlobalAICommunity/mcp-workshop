@@ -64,6 +64,12 @@ ollama pull qwen3:4b
 That is ~2.6 GB. If you have a machine with some room, `ollama pull qwen3:8b` is
 noticeably more reliable at chaining tool calls.
 
+Once pulled, warm it up so the first question in the workshop is not the slowest:
+
+```bash
+ollama run qwen3:4b "hello" --verbose=false
+```
+
 Prefer a hosted model, or can't run one locally? The workshop supports **Google
 Gemini**, **xAI Grok** and **Microsoft Foundry** as one-line swaps. See
 [models.md](models.md) — Gemini has a usable free tier and is the easiest

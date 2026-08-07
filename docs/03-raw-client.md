@@ -150,11 +150,17 @@ Things worth trying live:
   recover using `list_destinations`.
 - Ask something with no tool for it and watch it just answer.
 
-### Small models wobble
+**Pacing note:** on a local model each of these takes roughly 10–75 seconds
+depending on how many tools it chains. Run one throwaway query before the session
+to warm the model up, and start a question *before* you explain it rather than
+after.
 
-`qwen3:4b` is good but not perfect. Expect it to occasionally skip a tool or
-mangle its JSON. The solution handles malformed arguments by telling the model
-rather than crashing:
+### Small models wobble (a bit)
+
+`qwen3:4b` handled every demo question here correctly, including the two-tool
+chain and the error recovery. Still, it is a 4B model — occasionally it will skip
+a tool or mangle its JSON. The solution handles malformed arguments by telling
+the model rather than crashing:
 
 ```python
 except json.JSONDecodeError:

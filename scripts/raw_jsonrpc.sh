@@ -11,6 +11,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 METHOD="${1:-server/discover}"
 PARAMS="${2:-}"
+SERVER_FILE="${MCP_SERVER_FILE:-src/solution/travel_server.py}"
 [ -z "$PARAMS" ] && PARAMS='{}'
 
 # Since the 2026-07-28 revision there is no `initialize` handshake. Instead every
@@ -32,5 +33,5 @@ echo >&2
 # The sleep keeps stdin open long enough for the server to finish the call;
 # without it the process sees EOF and exits before replying.
 { echo "$REQUEST"; sleep 2; } \
-  | .venv/bin/python src/solution/travel_server.py 2>/dev/null \
+      | .venv/bin/python "$SERVER_FILE" 2>/dev/null \
   | python3 -c 'import json,sys; [print(json.dumps(json.loads(l), indent=2)) for l in sys.stdin if l.strip()]'

@@ -15,6 +15,7 @@ lesson can focus on MCP and agent mechanics rather than provider authentication.
 Empty the client file:
 
 ```bash
+mkdir -p src/starter
 : > src/starter/mcp_client.py
 ```
 

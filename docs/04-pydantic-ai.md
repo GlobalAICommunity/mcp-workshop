@@ -5,7 +5,7 @@
 Same agent as module 3. Roughly ten lines. Then we put it in a browser and let the
 room talk to it.
 
-- **Work in**: `src/starter/agent_pydantic.py`, then `src/starter/web.py`
+- **Create**: empty `src/starter/agent_pydantic.py` and `src/starter/web.py` files
 - **Solutions**: the matching files in `src/solution/`
 - **Note**: this module runs in the **other** virtualenv, `.venv-agent`
 

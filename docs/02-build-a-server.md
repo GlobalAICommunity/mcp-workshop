@@ -14,7 +14,7 @@ a demo and trust it.
 (It also means the weather is often nonsense. Reykjavik at 22°C is normal. This is
 fine — it keeps attention on the protocol.)
 
-- **Work in**: `src/starter/travel_server.py` (follow the numbered `TODO`s)
+- **Create**: an empty `src/starter/travel_server.py`, then add each section in order
 - **Stuck or behind?**: `src/solution/travel_server.py` is the finished version,
   and using it is completely fine
 

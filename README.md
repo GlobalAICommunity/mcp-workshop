@@ -100,8 +100,9 @@ flowchart LR
     S --> T["get_weather · get_forecast<br/>search_flights · list_destinations"]
 ```
 
-Work in `src/starter/` — stubs with numbered TODOs. `src/solution/` has the
-finished version of every file if you get stuck or fall behind.
+The Global AI Learn course creates each application file from scratch under
+`src/starter/`, one runnable section at a time. `src/solution/` contains the
+finished reference implementations.
 
 ---
 
@@ -123,15 +124,15 @@ MCP_WORKSHOP_PROVIDER=ollama   # ollama | google | grok | foundry
 ## Repo layout
 
 ```
-docs/           the workshop, in order
+global-ai-learn/  the Global AI Learn course
+docs/             supporting workshop and reference material
 src/
-  starter/      stubs with TODOs — work here
-  solution/     the finished reference
-  model_config.py
+  solution/       the finished reference implementations
+  model_config.py shared model-provider configuration
 scripts/
-  verify_setup.py     make check
-  raw_jsonrpc.sh      poke the server with no SDK at all
-  download_web_ui.py  vendor the chat UI for offline use
+  verify_setup.py      make check
+  raw_jsonrpc.sh       poke the server with no SDK at all
+  download_web_ui.py   vendor the chat UI for offline use
 ```
 
 Two virtualenvs, deliberately — `.venv` for the server (`mcp` 2.0) and

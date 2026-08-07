@@ -13,6 +13,7 @@ module uses `.venv-agent`, while the server you built still runs through `.venv`
 Start clean:
 
 ```bash
+mkdir -p src/starter
 : > src/starter/agent_pydantic.py
 ```
 

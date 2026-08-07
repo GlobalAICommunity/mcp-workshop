@@ -7,7 +7,7 @@ client is an ordinary program. Then we add a model and write the entire agent lo
 by hand — because it is about forty lines, and once you have written it you will
 never be confused by an agent framework again.
 
-- **Work in**: `src/starter/mcp_client.py`, then `src/starter/agent_raw.py`
+- **Create**: empty `src/starter/mcp_client.py` and `src/starter/agent_raw.py` files
 - **Solutions**: the matching files in `src/solution/`
 
 ---

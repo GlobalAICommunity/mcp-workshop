@@ -14,6 +14,7 @@ file you are building.
 From the repository root, remove any starter content:
 
 ```bash
+mkdir -p src/starter
 : > src/starter/travel_server.py
 ```
 

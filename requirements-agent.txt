@@ -1,0 +1,9 @@
+# Module 4-5: the Pydantic AI client and the browser chat UI.
+# Installed into .venv-agent — this CANNOT share a virtualenv with mcp 2.0,
+# because Pydantic AI's MCP support goes through fastmcp-slim, which still
+# pins mcp<2.0. See docs/00-setup.md.
+#
+#   python3 -m venv .venv-agent && .venv-agent/bin/pip install -r requirements-agent.txt
+
+pydantic-ai-slim[mcp,openai,google,web]==2.24.0
+python-dotenv==1.2.2

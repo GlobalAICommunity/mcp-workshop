@@ -1,0 +1,8 @@
+# Module 0-3: the MCP server and the raw client.
+# Installed into .venv — see docs/00-setup.md for why there are two.
+#
+#   python3 -m venv .venv && .venv/bin/pip install -r requirements-server.txt
+
+mcp==2.0.0
+openai==2.53.0
+python-dotenv==1.2.2
